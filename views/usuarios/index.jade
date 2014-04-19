@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+	h1 Gerenciamento de Usuário
+	br
+	if msgUpdate
+		div(class="alert alert-info")
+			p Dados Atualizados com Sucesso.
+	br
+	table(class="table well" id="tb1")
+		thead
+			tr(class="")
+				th ID
+				th Nome
+				th Login
+				th Ações
+		tbody
+			each valor, i in lista
+				tr(class="")
+					td #{valor._id}
+					td #{valor.nome}
+					td #{valor.login}
+					td
+						a(href="/usuarios/show/#{valor._id}" title="Visualizar" class="btn btn-primary")
+							span(class="glyphicon glyphicon-search")
+						&nbsp
+						a(href="/usuarios/edit/#{valor._id}" title="Editar" class="btn btn-info")
+							span(class="glyphicon glyphicon-pencil")
+	br
+	a(href="/usuarios/create" title="Novo Usuario")
+		input(type="button", value="Novo Usuario" class="btn btn-success")

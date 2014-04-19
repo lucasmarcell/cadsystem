@@ -1,0 +1,49 @@
+doctype html5
+html
+	head
+		title #{title}
+		link(rel='stylesheet', href='/bootstrap/css/bootstrap.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/stylesheets/normalize.css')
+		link(rel='stylesheet', href='/stylesheets/demo.css')
+		link(rel='stylesheet', href='/stylesheets/icons.css')
+		link(rel='stylesheet', href='/stylesheets/style5.css')
+		script(src="/socket.io/socket.io.js")
+		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
+		script(src="/javascripts/clientside.js")
+		script(src="/bootstrap/js/bootstrap.min.js")
+		script(src="/javascripts/modernizr.custom.js")
+
+	body
+		nav(id="bt-menu" class="bt-menu")
+			a(href="#" class="bt-menu-trigger")
+				span Menu
+			ul
+				li
+					a(href="/") Home
+				li
+					a(href="/usuarios") Usuários
+				li
+					a(href="/chat") Chat
+				li
+					a(href="/contatos") Contatos
+				li
+					a(href="/suporte") Suporte
+
+			ul
+				li
+					a(href="https://twitter.com/LucasMARCELL" target="_blank" title="Twitter" class="bt-icon icon-twitter") Twitter
+				li
+					a(href="https://plus.google.com/u/0/100752000510337594337" target="_blank" title="Google+" class="bt-icon icon-gplus") Google+
+				li
+					a(href="https://www.facebook.com/MARCELLLucas" target="_blank" title="Facebook" class="bt-icon icon-facebook") Facebook
+				li
+					a(href="https://github.com/lucasmarcell" target="_blank" title="GitHub" class="bt-icon icon-github") GitHub
+		div(class="container")
+			block content
+
+			footer
+				p Desenvolvido por 
+					b Lucas Marcell
+	script(src='/javascripts/classie.js')
+	script(src='/javascripts/borderMenu.js')
