@@ -29,7 +29,9 @@ app.use(express.session());
 app.use(app.router);
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(function (req, res, next){
+	res.status(404).render('404/404');
+});
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
