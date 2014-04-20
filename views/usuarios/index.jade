@@ -3,9 +3,10 @@ extends ../layout
 block content
 	h1 Gerenciamento de Usuário
 	br
-	if msgUpdate
+	br
+	if messages.info
 		div(class="alert alert-info")
-			p Dados Atualizados com Sucesso.
+			p #{messages.info}
 	br
 	table(class="table well" id="tb1")
 		thead

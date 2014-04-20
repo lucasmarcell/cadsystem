@@ -11,7 +11,8 @@
     "jade": "*",
     "stylus": "*",
     "mongoose": "*",
-    "nodemon": "*"
+    "nodemon": "*",
+    "express-flash": "*"
   },
   "devDependencies": {
     "mocha": "*",

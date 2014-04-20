@@ -10,6 +10,7 @@ var mongoose = require('mongoose');
 //var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+var flash = require('express-flash');
 
 var app = express();
 
@@ -24,8 +25,11 @@ app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
-app.use(express.cookieParser('your secret here'));
-app.use(express.session());
+
+app.use(express.cookieParser('cadsystem'));
+app.use(express.session({ cookie: { maxAge: 60000 }}));
+app.use(flash());
+
 app.use(app.router);
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
